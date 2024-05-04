@@ -1,7 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "../../core/headers/object.h"
+#include "object.h"
 
 class Player : public Object
 {

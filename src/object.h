@@ -6,7 +6,6 @@
 #include "component.h"
 #include <vector>
 #include <algorithm> 
-#include <memory>    // For std::shared_ptr
 
 class Object 
 {
@@ -17,13 +16,13 @@ class Object
         virtual void Draw();
          std::vector<Component*> components;
 
-        template <typename T>
+        template <class T>
         T* AddComponent(T* component);
 
-        template <typename T>
+        template <class T>
         T* GetComponent();
 
-        template <typename T>
+        template <class T>
         void RemoveComponent();
         unsigned long long id;
 };

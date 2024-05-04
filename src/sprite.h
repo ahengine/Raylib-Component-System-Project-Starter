@@ -16,11 +16,13 @@ class Sprite : public Component
     public:
         Sprite();
         ~Sprite();
+        void Awake() override;
         void Update() override;
         void Draw() override;
         void SetTexture(const char *sprPath);
         void SetColor(Color color);
         void SetPosition(Vector2 position);
+        
 };
 
 #endif

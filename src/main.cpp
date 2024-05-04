@@ -1,5 +1,5 @@
 #include <raylib.h>
-#include "entities/headers/player.h"
+#include "player.h"
 
 
 int main()
@@ -11,7 +11,7 @@ int main()
     const int screenWidth = 800;
     const int screenHeight = 600;
 
-    InitWindow(screenWidth, screenHeight, "Dapper Dasher");
+    InitWindow(screenWidth, screenHeight, "Entity Component System");
     SetTargetFPS(60);
 
     while (!WindowShouldClose())
