@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef OBJECT_H
 #define OBJECT_H
 

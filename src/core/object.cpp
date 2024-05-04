@@ -1,6 +1,3 @@
-#ifndef OBJECT_TPP
-#define OBJECT_TPP
-
 #include <raylib.h>
 #include "./headers/object.h"
 #include "./headers/sprite.h"
@@ -12,23 +9,23 @@
 Object::Object() {
     id = IdGenerator::generateUniqueID();
     components.clear();
-}
+};
 
 Object::~Object() {
-}
+};
 
 void Object::Update() 
 {
     for (size_t i = 0; i < components.size(); ++i)
         components[i]->Update();
-}
+};
 
 
 void Object::Draw()
 {
     for (size_t i = 0; i < components.size(); ++i)
         components[i]->Draw();
-}
+};
 
 template <typename T>
 T* Object::AddComponent(T* component) {
@@ -38,7 +35,7 @@ T* Object::AddComponent(T* component) {
     component->Awake();
     component->Start();
     return component;
-}
+};
 
 template <typename T>
 T* Object::GetComponent() {
@@ -47,7 +44,7 @@ T* Object::GetComponent() {
             return castedComponent;
 
     return nullptr;
-}
+};
 
 template <typename T>
 void Object::RemoveComponent() 
@@ -55,6 +52,4 @@ void Object::RemoveComponent()
     auto it = std::remove_if(components.begin(), components.end(),
                              [](Component* component) { return dynamic_cast<T*>(component); });
     components.erase(it, components.end());
-}
-
-#endif 
+};

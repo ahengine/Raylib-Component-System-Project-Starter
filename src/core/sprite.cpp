@@ -1,7 +1,23 @@
 #include <raylib.h>
 #include "./headers/sprite.h"
 
-void Sprite::Draw(Vector2 position) 
+Sprite::Sprite()
+{
+
+};
+
+Sprite::~Sprite()
+{
+
+};
+
+void Sprite::Update()
+{
+    
+}
+
+
+void Sprite::Draw() 
 {
    if(spriteTexture.id > 0)
         DrawTextureRec(spriteTexture, rect, position, color);
@@ -16,4 +32,9 @@ void Sprite::SetTexture(const char *sprPath)
 void Sprite::SetColor(Color color)
 {
     this->color = color;
+}
+
+void Sprite::SetPosition(Vector2 position)
+{
+    this->position = position;
 }

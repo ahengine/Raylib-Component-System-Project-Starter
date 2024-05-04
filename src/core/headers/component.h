@@ -1,4 +1,5 @@
-#pragma once
+#ifndef COMPONENT_H
+#define COMPONENT_H
 
 class Component 
 {
@@ -10,3 +11,5 @@ class Component
         virtual void Draw();
         unsigned long long objectOwnerId;
 };
+
+#endif

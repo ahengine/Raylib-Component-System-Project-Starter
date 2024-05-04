@@ -1,10 +1,10 @@
 #include <raylib.h>
-#include "modules/player/player.h"
+#include "entities/headers/player.h"
 
 
 int main()
 {
-    Player* player = new Player();
+    Player player = Player();
 
     Color darkGreen = Color{20, 160, 133, 255};
 
@@ -18,8 +18,8 @@ int main()
     {
         BeginDrawing();
         ClearBackground(darkGreen);
-        player->Update();
-        player->Draw();
+        player.Update();
+        player.Draw();
         EndDrawing();
     }
 
