@@ -12,6 +12,8 @@ Object::Object() {
 }
 
 Object::~Object() {
+    for (size_t i = 0; i < components.size(); ++i)
+        components[i]->~Component();
 }
 
 void Object::Update() 
@@ -26,15 +28,11 @@ void Object::Draw()
         components[i]->Draw();
 }
 
-template <class T>
-T* Object::AddComponent(T* component) {
-
-    static_assert(std::is_base_of<Component, T>::value, "T must be derived from Component");
+Component* Object::AddComponent(Component* component) {
 
     component->objectOwnerId = id;
     components.push_back(component);
     component->Awake();
-    component->Start();
     return component;
 }
 

@@ -22,6 +22,7 @@ class Sprite : public Component
         void SetTexture(const char *sprPath);
         void SetColor(Color color);
         void SetPosition(Vector2 position);
+        void SetScale(Vector2 scale);
         
 };
 

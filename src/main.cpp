@@ -1,11 +1,9 @@
 #include <raylib.h>
 #include "player.h"
-
+#include <iostream>
 
 int main()
 {
-    Player player = Player();
-
     Color darkGreen = Color{20, 160, 133, 255};
 
     const int screenWidth = 800;
@@ -13,6 +11,8 @@ int main()
 
     InitWindow(screenWidth, screenHeight, "Entity Component System");
     SetTargetFPS(60);
+
+    Player player = Player();
 
     while (!WindowShouldClose())
     {

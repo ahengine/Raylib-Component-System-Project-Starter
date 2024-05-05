@@ -14,10 +14,10 @@ class Object
         ~Object();
         virtual void Update();
         virtual void Draw();
-         std::vector<Component*> components;
+        
+        std::vector<Component*> components;
 
-        template <class T>
-        T* AddComponent(T* component);
+        Component* AddComponent(Component* component);
 
         template <class T>
         T* GetComponent();

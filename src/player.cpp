@@ -1,23 +1,31 @@
 #include "player.h"
-#include "sprite.h"
+#include "transform.h"
 
 Player::Player()
 {
-    Sprite* spr = new Sprite();
-    spr->SetTexture("../assets/player.jpg");
-    AddComponent(spr);
+    spr.SetTexture("player.png");
+    SetScale(Vector2{.5, .5});
 }
 
-Player::~Player()
-{
-}
+Player::~Player() {}
 
 void Player::Update()
 {
-    Object::Update();
+    float deltaTime = GetFrameTime();
+
+    Vector2 pos = tr.GetPosition();
+
+    if (IsKeyDown(KEY_RIGHT))
+        pos.x += moveSpeed * deltaTime;
+
+    if (IsKeyDown(KEY_LEFT))
+        pos.x -= moveSpeed * deltaTime;
+
+    SetPosition(pos);
+    Entity::Update();
 }
 
 void Player::Draw()
 {
-    Object::Draw();
+    Entity::Draw();
 }
